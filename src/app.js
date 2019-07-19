@@ -65,7 +65,6 @@ app.get("/weather", (req, res) => {
                             });
                         }
                         else {
-                            console.log(response);
                             const {center} = response;
     
                             longitude = center[0];
