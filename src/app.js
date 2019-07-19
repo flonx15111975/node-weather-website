@@ -84,9 +84,11 @@ app.get("/weather", (req, res) => {
                                     const temperature = currently.temperature;
                                     const precipProbability = currently.precipProbability;
                                     const summary = daily.data[0].summary;
+                                    const tempHigh = daily.data[0].temperatureHigh;
+                                    const tempLow = daily.data[0].temperatureLow;
                                     
                                     _location = timezone;
-                                    _forecast = summary + " Currently the Tempreture is " + temperature + " degrees out. There is " + precipProbability + "% chance of rain.";
+                                    _forecast = summary + " Currently the Tempreture is " + temperature + " degrees out.  With a Hight of " + tempHigh + " and a Low of " + tempLow + ". There is " + precipProbability + "% chance of rain.";
                                
                                     res.send(
                                         {
